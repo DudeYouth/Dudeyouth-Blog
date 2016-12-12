@@ -1,0 +1,11 @@
+{
+    "apps": [{
+        "name": "dudeyouth",
+        "cwd": "./",
+        "script": "./bin/www",
+        "exec_mode": "cluster_mode",
+        "error_file": "./test-err.log",
+        "out_file": "./test-out.log",
+        "watch": true
+    }]
+}

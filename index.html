@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="file" name="" id="file"/>
+        <input type="submit" value="上传" id="upload-btn"/>
+        <script src="jquery.min.js"></script>
+        <script>
+            var files="";
+            $("#file").on("change",function(){
+                var a=new FileReader();
+                a.onload=function(e){
+                   files=this.result;
+                }
+                a.readAsDataURL(this.files[0]);
+            })
+            $("#upload-btn").on("click",function(){
+                $.ajax({
+                    type:"post",
+                    content:files,
+                    success:function(data){
+                        if(data.status===200){
+                            alert("ok");
+                        }
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>
